@@ -35,11 +35,12 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
+          {console.log(window.location.pathname === "/" ? true : false)}
           <Navbar />
-          <Route exact path="/" component={Landing} />
           <section className="container">
             <Alert />
             <Switch>
+              <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/profiles" component={Profiles} />
